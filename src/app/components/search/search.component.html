@@ -1,0 +1,26 @@
+<div class="search-container">
+  <!-- Search Box with Loading Indicator -->
+  <div class="search-input-wrapper">
+    <input
+      type="text"
+      placeholder="Search for books..."
+      (input)="onSearch($event)"
+      class="search-input"
+    />
+    <!-- Loading Spinner -->
+    <div *ngIf="loading$ | async" class="loading-spinner"></div>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error$ | async as error" class="error-message">Error: {{ error }}</div>
+
+  <!-- Results -->
+  <div *ngIf="currentQuery && !(error$ | async)">
+    <app-results
+    *ngIf="results$ | async as results"
+    [results]="results"
+    (loadMoreResults)="loadMoreResults()"
+  ></app-results>
+</div>
+
+</div>

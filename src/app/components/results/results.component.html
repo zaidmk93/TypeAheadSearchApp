@@ -1,0 +1,12 @@
+<cdk-virtual-scroll-viewport
+  itemSize="50"
+  class="viewport"
+  (scrolledIndexChange)="onScroll($event)"
+>
+  <div *cdkVirtualFor="let result of results" class="result-item">
+    <h3>{{ result.title }}</h3>
+    <p *ngIf="result.author_name" class="author">
+      {{ result.author_name?.join(', ') }}
+    </p>
+  </div>
+</cdk-virtual-scroll-viewport>

@@ -1,0 +1,29 @@
+.viewport {
+  height: 300px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 1rem;
+
+  .result-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 0;
+      color: #333;
+    }
+
+    .author {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+  }
+}

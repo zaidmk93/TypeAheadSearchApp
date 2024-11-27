@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TypeAheadSearch": {
+    "TypeaheadSearchApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/type-ahead-search",
+            "outputPath": "dist/typeahead-search-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -63,12 +63,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "TypeAheadSearch:build:production"
+              "browserTarget": "TypeaheadSearchApp:build:production"
             },
             "development": {
-              "browserTarget": "TypeAheadSearch:build:development"
+              "browserTarget": "TypeaheadSearchApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TypeAheadSearch:build"
+            "browserTarget": "TypeaheadSearchApp:build"
           }
         },
         "test": {
